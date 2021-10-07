@@ -1,0 +1,27 @@
+var sheetName = 'Sheet1'
+		var scriptProp = PropertiesService.getScriptProperties()
+
+		function intialSetup () {
+		  var activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
+		  scriptProp.setProperty('key', activeSpreadsheet.getId())
+		}
+
+		function doPost (e) {
+      const {Name,Email,Phone,Address} = JSON.parse(e.postData.contents)
+			var doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
+			var sheet = doc.getSheetByName(sheetName)
+      sheet.appendRow([Name, Email, Phone,Address]);
+		  }
+
+
+    function doGet(){
+        var doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
+        var sheet = doc.getSheetByName(sheetName)
+        var lastRow = sheet.getLastRow();
+        var lastColumn = sheet.getLastColumn();
+        var Data = sheet.getRange(2,1,lastRow-1,lastColumn).getValues();
+        return ContentService.createTextOutput(JSON.stringify(Data));
+      }
+            
+         
+    
