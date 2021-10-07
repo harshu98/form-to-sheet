@@ -1,0 +1,46 @@
+body {
+    width: 400px;
+}
+
+.register .nav-tabs .nav-link:hover {
+    border: none;
+}
+
+.text-align {
+    margin-top: -3%;
+    padding: 5%;
+    margin-left: 10%;
+}
+
+.form-new {
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.register-heading {
+    margin-bottom: 10%;
+    color: #e9ecef;
+}
+
+.register-heading h1 {
+    margin-bottom: 10%;
+    color: #e9ecef;
+}
+
+.register {
+    background: -webkit-linear-gradient(left, #055a4f, #00c6ff);
+    padding: 3%;
+}
+
+.btn-submit {
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    color: #fff;
+    background-color: #03612e;
+    border: none;
+    cursor: pointer;
+    margin-right: 6%;
+    color: rgb(246, 246, 252);
+    margin-top: 4%;
+}
